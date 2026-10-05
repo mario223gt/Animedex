@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AnimeDex - Anime</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body{background:#050505;color:#fff}.text-verde,.navbar-brand{color:#39FF14!important}
+.border-morado{border-color:#7B2CBF!important}.nav-link:hover{color:#9D4EDD!important}
+.anime{background:#111;border:2px solid #7B2CBF;border-radius:15px;overflow:hidden;box-shadow:0 0 25px #7b2cbf66}
+.anime img{width:100%;height:550px;object-fit:cover}.info{padding:30px}
+.info h1{color:#39FF14;font-weight:bold}.dato{color:#9D4EDD;font-weight:bold}
+@media(max-width:768px){.anime img{height:400px}}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-morado">
+<div class="container">
+<a class="navbar-brand fw-bold fs-2 d-flex align-items-center gap-2" href="index.html">
+<img src="./img_dex/logo.jpg" alt="Logo AnimeDex" style="width:100px;height:100px;object-fit:contain">AnimeDex
+</a>
+<button class="navbar-toggler border-morado" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="menu"><ul class="navbar-nav ms-auto">
+<li><a class="nav-link" href="index.html">Inicio</a></li>
+<li><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+<li><a class="nav-link" href="biblioteca_anime.html">Biblioteca</a></li>
+<li><a class="nav-link active text-verde" href="anime.html">Anime</a></li>
+<li><a class="nav-link" href="preguntas.html">Preguntas</a></li>
+<li><a class="nav-link" href="Personas.html">usuarios</a></li>
+<li><a class="nav-link" href="contacto.html">Contacto</a></li>
+</ul></div></div>
+</nav>
+
+<section class="py-5"><div class="container"><div id="anime" class="anime"></div></div></section>
+
+<footer class="border-top border-morado mt-5 py-4">
+<div class="container text-center">
+<p class="mb-2 text-verde fw-bold">AnimeDex</p>
+<p class="text-white-50 mb-2">Tu biblioteca de anime.</p>
+<a href="contacto.html" class="text-verde text-decoration-none">Contacto</a>
+<p class="text-white-50 mt-3 mb-0">© 2026 AnimeDex</p>
+</div>
+</footer>
+
+<script>
+const animes={
+"One Piece":["onepiece.jpg","Acción, Aventura, Comedia","1999","Más de 1100","En emisión","One Piece sigue las aventuras de Monkey D. Luffy y su tripulación en busca del legendario tesoro One Piece."],
+"Bleach":["bleach.jpg","Acción, Aventura, Sobrenatural","2004","366","Finalizado","Ichigo Kurosaki obtiene los poderes de un Shinigami y comienza a proteger a los humanos de espíritus malignos."],
+"Naruto Shippuden":["narutoshipudden.jpg","Acción, Aventura, Shonen","2007","500","Finalizado","Naruto Uzumaki continúa su camino para convertirse en Hokage mientras enfrenta enemigos cada vez más poderosos."],
+"Dragon Ball Z":["dragonballz.jpg","Acción, Aventura, Artes marciales","1989","291","Finalizado","Goku y sus amigos protegen la Tierra de poderosos enemigos mientras enfrentan grandes batallas."],
+"Attack on Titan":["shingekinokyojin.jpg","Acción, Drama, Fantasía","2013","89","Finalizado","La humanidad vive protegida dentro de enormes murallas debido a la amenaza de los Titanes."],
+"Jujutsu Kaisen":["jujutsukaisen.jpg","Acción, Fantasía oscura, Sobrenatural","2020","Actualmente en emisión","En emisión","Yuji Itadori se involucra en el mundo de la hechicería después de entrar en contacto con un objeto maldito."],
+"Solo Leveling":["sololeveling.jpg","Acción, Fantasía, Aventura","2024","25","En emisión","Sung Jin-Woo comienza como uno de los cazadores más débiles, pero obtiene un misterioso sistema que le permite subir de nivel."],
+"Hunter x Hunter":["hunterxhunter.jpg","Acción, Aventura, Fantasía","2011","148","Finalizado","Gon Freecss emprende un viaje para convertirse en Hunter y encontrar a su padre."],
+"Neon Genesis Evangelion":["neonevangelion.jpg","Mecha, Drama, Ciencia ficción","1995","26","Finalizado","Shinji Ikari es reclutado para pilotar un enorme mecha llamado Evangelion y luchar contra misteriosos Ángeles."],
+"Akame ga Kill":["akamegakill.jpg","Acción, Fantasía, Drama","2014","24","Finalizado","Tatsumi se une al grupo de asesinos Night Raid para luchar contra un imperio corrupto."],
+"The Dangers in My Heart":["bokunokokoro.jpg","Romance, Comedia, Escolar","2023","25","Finalizado","Kyotaro Ichikawa comienza a acercarse cada vez más a Anna Yamada, una de las chicas más populares de su escuela."],
+"Code Geass":["codegeass.jpg","Acción, Drama, Mecha","2006","50","Finalizado","Lelouch obtiene el poder llamado Geass y decide utilizarlo para iniciar una rebelión contra Britannia."],
+"Dandadan":["dandadan.jpg","Acción, Comedia, Sobrenatural","2024","24","En emisión","Momo y Okarun se enfrentan a fenómenos paranormales, extraterrestres y situaciones extrañas."],
+"Death Note":["deathnote.jpg","Misterio, Psicológico, Sobrenatural","2006","37","Finalizado","Light Yagami encuentra un cuaderno capaz de matar a cualquier persona cuyo nombre sea escrito en él."],
+"Tengen Toppa Gurren Lagann":["gurrenlagann.jpg","Acción, Mecha, Aventura","2007","27","Finalizado","Simon y Kamina abandonan el mundo subterráneo y comienzan una aventura para luchar contra las fuerzas que amenazan a la humanidad."],
+
+"Assassination Classroom":["assassinationclassrom.jpg","Acción, Comedia, Escolar","2015","47","Finalizado","Una clase de estudiantes debe intentar asesinar a su extraño profesor antes de que destruya la Tierra."],
+"Baki":["baki.jpg","Acción, Artes marciales, Deportes","2018","39","Finalizado","Baki Hanma entrena constantemente para convertirse en el luchador más fuerte y superar a su padre."],
+"Berserk":["berserk.jpg","Acción, Fantasía oscura, Drama","2016","24","Finalizado","Guts lucha por sobrevivir en un mundo oscuro lleno de monstruos, guerras y conflictos."],
+"Chainsaw Man":["chainsawman.jpg","Acción, Terror, Fantasía","2022","12","En emisión","Denji se convierte en Chainsaw Man después de fusionarse con su mascota demonio Pochita."],
+"Classroom of the Elite":["classromoftheelite.jpg","Drama, Psicológico, Escolar","2017","38","En emisión","Kiyotaka Ayanokoji estudia en una academia donde los estudiantes compiten mediante estrategias y habilidades."],
+"Darling in the FranXX":["darlinginthefranxx.jpg","Mecha, Romance, Ciencia ficción","2018","24","Finalizado","Hiro y Zero Two luchan juntos pilotando enormes robots para proteger a la humanidad."],
+"Fire Force":["fireforce.jpg","Acción, Fantasía, Sobrenatural","2019","48","Finalizado","Shinra Kusakabe se une a una brigada especial para combatir a personas que se convierten espontáneamente en llamas."],
+"Fullmetal Alchemist":["fullmetalalchemits.jpg","Acción, Aventura, Fantasía","2003","51","Finalizado","Los hermanos Edward y Alphonse Elric buscan recuperar sus cuerpos después de un experimento de alquimia fallido."],
+"Gals!":["gals.jpg","Comedia, Romance, Escolar","2001","52","Finalizado","Ran Kotobuki es una estudiante popular que disfruta de la moda, sus amigas y las aventuras de la vida escolar."],
+"Haikyuu!!":["haikyuu.jpg","Deportes, Comedia, Escolar","2014","85","Finalizado","Shoyo Hinata se esfuerza por convertirse en un gran jugador de voleibol a pesar de su baja estatura."],
+"Hajime no Ippo":["hajimenoippo.jpg","Deportes, Boxeo, Comedia","2000","126","En emisión","Ippo Makunouchi descubre el boxeo y comienza su camino para convertirse en un gran boxeador."],
+"Horimiya":["horimiya.jpg","Romance, Comedia, Escolar","2021","26","Finalizado","Hori y Miyamura descubren que sus personalidades fuera de la escuela son muy diferentes."],
+"Initial D":["initiald.jpg","Acción, Deportes, Automovilismo","1998","86","Finalizado","Takumi Fujiwara demuestra sus increíbles habilidades conduciendo por las peligrosas carreteras de montaña."],
+"JoJo's Bizarre Adventure":["jojosbizarreadventure.jpg","Acción, Aventura, Sobrenatural","2012","190","En emisión","La familia Joestar enfrenta diferentes enemigos y amenazas sobrenaturales a través de varias generaciones."],
+"Kaguya-sama: Love is War":["kaguyasama.jpg","Romance, Comedia, Escolar","2019","37","Finalizado","Kaguya y Miyuki están enamorados, pero ambos intentan conseguir que el otro confiese primero."],
+"Komi Can't Communicate":["komicantcommunicate.jpg","Romance, Comedia, Escolar","2021","24","Finalizado","Komi quiere hacer cien amigos mientras intenta superar sus dificultades para comunicarse con los demás."],
+"Los diarios de la boticaria":["losdiariosdelaboticaria.jpg","Drama, Misterio, Histórico","2023","48","En emisión","Maomao utiliza sus conocimientos de medicina y venenos para resolver misterios dentro del palacio imperial."],
+"Mob Psycho 100":["mobpsycho100.jpg","Acción, Comedia, Sobrenatural","2016","37","Finalizado","Mob es un joven con enormes poderes psíquicos que intenta llevar una vida normal."],
+"My Dress-Up Darling":["mydressupdarling.jpg","Romance, Comedia, Escolar","2022","12","En emisión","Wakana Gojo conoce a Marin Kitagawa y comienza a ayudarla a crear sus propios cosplays."],
+"Nanatsu no Taizai":["nanatsunotaizai.jpg","Acción, Fantasía, Aventura","2014","100","Finalizado","Elizabeth busca a los legendarios Siete Pecados Capitales para recuperar su reino."],
+"Pokémon":["pokemon.jpg","Aventura, Fantasía, Acción","1997","Más de 1200","En emisión","Ash y sus amigos viajan por diferentes regiones mientras entrenan Pokémon y participan en grandes aventuras."],
+"Re:Zero":["re_zero.jpg","Fantasía, Drama, Aventura","2016","66","En emisión","Subaru Natsuki llega a otro mundo y descubre que tiene el poder de regresar después de morir."],
+"Sword Art Online":["sao.jpg","Acción, Aventura, Romance","2012","96","En emisión","Kirito queda atrapado junto a miles de jugadores dentro de un peligroso videojuego de realidad virtual."],
+"Serial Experiments Lain":["serialexperimentlain.jpg","Psicológico, Ciencia ficción, Misterio","1998","13","Finalizado","Lain comienza a descubrir una extraña conexión entre el mundo real y una red virtual llamada Wired."],
+"Slam Dunk":["slamdunk.jpg","Deportes, Comedia, Escolar","1993","101","Finalizado","Hanamichi Sakuragi entra al equipo de baloncesto y comienza a descubrir su pasión por el deporte."],
+"Tokyo Ghoul":["tokyoghoul.jpg","Acción, Terror, Fantasía oscura","2014","48","Finalizado","Kaneki se convierte en mitad humano y mitad ghoul después de un extraño accidente."],
+"Mi vecino Totoro":["totoro.jpg","Fantasía, Aventura, Familia","1988","1 película","Finalizado","Dos hermanas se mudan al campo y conocen a unas misteriosas criaturas del bosque."],
+"Vinland Saga":["vinlandsaga.jpg","Acción, Drama, Histórico","2019","48","En emisión","Thorfinn busca vengar la muerte de su padre mientras se ve involucrado en conflictos y guerras vikingas."],
+"Your Name":["yourname.jpg","Romance, Drama, Fantasía","2016","1 película","Finalizado","Mitsuha y Taki descubren que sus vidas están conectadas de una manera misteriosa."],
+"Yu-Gi-Oh!":["yugioh.jpg","Acción, Fantasía, Juegos","2000","224","Finalizado","Yugi y sus amigos participan en intensos duelos utilizando cartas y enfrentándose a poderosos rivales."],
+"Yu Yu Hakusho":["yuyuhakusho.jpg","Acción, Aventura, Sobrenatural","1992","112","Finalizado","Yusuke Urameshi recibe una segunda oportunidad y comienza a trabajar como detective espiritual."]
+};
+const n=new URLSearchParams(location.search).get("anime"),a=animes[n],d=document.getElementById("anime");
+
+if(a){
+document.title=`AnimeDex - ${n}`;
+d.innerHTML=`<div class="row g-0"><div class="col-md-5"><img src="./img_dex/${a[0]}" alt="${n}"></div>
+<div class="col-md-7"><div class="info"><h1>${n}</h1><p class="mt-4">${a[5]}</p>
+<p><span class="dato">Género:</span> ${a[1]}</p>
+<p><span class="dato">Año:</span> ${a[2]}</p>
+<p><span class="dato">Capítulos:</span> ${a[3]}</p>
+<p><span class="dato">Estado:</span> ${a[4]}</p>
+<a href="catalogo.html" class="btn btn-outline-success mt-3">← Volver al catálogo</a>
+</div></div></div>`;
+}else d.innerHTML=`<div class="text-center p-5"><h1 class="text-verde">Anime no encontrado</h1>
+<p class="text-white-50">El anime seleccionado no existe en AnimeDex.</p>
+<a href="catalogo.html" class="btn btn-outline-success">Volver al catálogo</a></div>`;
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+```

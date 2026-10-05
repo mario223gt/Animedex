@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AnimeDex - Biblioteca</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body{background:#050505;color:#fff}.text-verde,.navbar-brand{color:#39FF14!important}
+.border-morado{border-color:#7B2CBF!important}.nav-link:hover{color:#9D4EDD!important}
+.card{background:#111;border:2px solid #7B2CBF;overflow:hidden;transition:.3s;cursor:pointer}
+.card:hover{transform:translateY(-5px);box-shadow:0 0 20px #7B2CBF}
+.card img{height:300px;object-fit:cover}.card-title{color:#39FF14;font-weight:bold}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-morado">
+<div class="container">
+<a class="navbar-brand fw-bold fs-2 d-flex align-items-center gap-2" href="index.html">
+<img src="./img_dex/logo.jpg" alt="Logo AnimeDex" style="width:100px;height:100px;object-fit:contain">
+AnimeDex
+</a>
+<button class="navbar-toggler border-morado" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li><a class="nav-link" href="index.html">Inicio</a></li>
+<li><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+<li><a class="nav-link active text-verde" href="biblioteca_anime.html">Biblioteca</a></li>
+<li><a class="nav-link" href="anime.html">Anime</a></li>
+<li><a class="nav-link" href="preguntas.html">Preguntas</a></li>
+<li><a class="nav-link" href="Personas.html">usuarios</a></li>
+<li><a class="nav-link" href="contacto.html">Contacto</a></li>
+</ul></div></div>
+</nav>
+
+<section class="py-5"><div class="container">
+<div class="text-center mb-5">
+<h1 class="display-4 fw-bold text-verde">Biblioteca Anime</h1>
+<hr class="border-morado border-3 mx-auto" style="max-width:250px;opacity:1">
+<p class="text-white-50">Explora tu colección de animes.</p>
+</div>
+<div class="row g-4" id="biblioteca"></div>
+</div></section>
+
+<footer class="border-top border-morado mt-5 py-4">
+<div class="container text-center">
+<p class="mb-2 text-verde fw-bold">AnimeDex</p>
+<p class="text-white-50 mb-2">Tu biblioteca de anime.</p>
+<a href="contacto.html" class="text-verde text-decoration-none">Contacto</a>
+<p class="text-white-50 mt-3 mb-0">© 2026 AnimeDex</p>
+</div>
+</footer>
+
+<script>
+const animes=[
+["akamegakill.jpg","Akame ga Kill"],
+["assassinationclassrom.jpg","Assassination Classroom"],
+["baki.jpg","Baki"],
+["berserk.jpg","Berserk"],
+["bleach.jpg","Bleach"],
+["bokunokokoro.jpg","The Dangers in My Heart"],
+["chainsawman.jpg","Chainsaw Man"],
+["classromoftheelite.jpg","Classroom of the Elite"],
+["codegeass.jpg","Code Geass"],
+["dandadan.jpg","Dandadan"],
+["darlinginthefranxx.jpg","Darling in the FranXX"],
+["deathnote.jpg","Death Note"],
+["dragonballz.jpg","Dragon Ball Z"],
+["fireforce.jpg","Fire Force"],
+["fullmetalalchemits.jpg","Fullmetal Alchemist"],
+["gals.jpg","Gals!"],
+["gurrenlagann.jpg","Tengen Toppa Gurren Lagann"],
+["haikyuu.jpg","Haikyuu!!"],
+["hajimenoippo.jpg","Hajime no Ippo"],
+["horimiya.jpg","Horimiya"],
+["hunterxhunter.jpg","Hunter x Hunter"],
+["initiald.jpg","Initial D"],
+["jojosbizarreadventure.jpg","JoJo's Bizarre Adventure"],
+["jujutsukaisen.jpg","Jujutsu Kaisen"],
+["kaguyasama.jpg","Kaguya-sama: Love is War"],
+["komicantcommunicate.jpg","Komi Can't Communicate"],
+["losdiariosdelaboticaria.jpg","Los diarios de la boticaria"],
+["mobpsycho100.jpg","Mob Psycho 100"],
+["mydressupdarling.jpg","My Dress-Up Darling"],
+["nanatsunotaizai.jpg","Nanatsu no Taizai"],
+["narutoshipudden.jpg","Naruto Shippuden"],
+["neonevangelion.jpg","Neon Genesis Evangelion"],
+["onepiece.jpg","One Piece"],
+["pokemon.jpg","Pokémon"],
+["re_zero.jpg","Re:Zero"],
+["sao.jpg","Sword Art Online"],
+["serialexperimentlain.jpg","Serial Experiments Lain"],
+["shingekinokioyin.jpg","Attack on Titan"],
+["slamdunk.jpg","Slam Dunk"],
+["sololeveling.jpg","Solo Leveling"],
+["tokyoghoul.jpg","Tokyo Ghoul"],
+["totoro.jpg","Mi vecino Totoro"],
+["vinlandsaga.jpg","Vinland Saga"],
+["yourname.jpg","Your Name"],
+["yugioh.jpg","Yu-Gi-Oh!"],
+["yuyuhakusho.jpg","Yu Yu Hakusho"]
+];
+
+biblioteca.innerHTML=animes.map(a=>`
+<div class="col-6 col-md-4 col-lg-3">
+<a href="anime.html?anime=${encodeURIComponent(a[1])}" class="text-decoration-none">
+<div class="card h-100">
+<img src="./img_dex/${a[0]}" alt="${a[1]}">
+<div class="card-body text-center"><h5 class="card-title">${a[1]}</h5></div>
+</div></a></div>`).join("");
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+```
